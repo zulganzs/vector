@@ -274,11 +274,13 @@
                     })
                     .then((d) => {
                         errors = 0;
-                        online(true);
-                        if (!d.timestamp) {
-                            online(false, "ESP32 belum kirim data");
+
+                        if (!d.esp_connected) {
+                            online(false, "Tidak Terhubung");
                             return;
                         }
+
+                        online(true);
 
                         document.getElementById("last-time").innerText =
                             new Date(d.timestamp).toLocaleTimeString("id-ID");
@@ -354,7 +356,7 @@
                         }
                     })
                     .catch(() => {
-                        if (++errors >= 3) online(false, "Backend offline");
+                        if (++errors >= 3) online(false, "Tidak Terhubung");
                     });
 
                 // History
