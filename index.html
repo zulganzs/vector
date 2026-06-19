@@ -392,7 +392,7 @@
                             .reverse()
                             .map(
                                 (r) =>
-                                    `<tr><td>${new Date(r.timestamp).toLocaleTimeString("id-ID")}</td><td>${r.ppm.toFixed(0)}</td><td>${r.flame === 0 ? "🔥" : "✅"}</td><td>${r.water_pct.toFixed(0)}%</td><td>${r.pump ? "💧" : "—"}</td></tr>`,
+                                    `<tr><td>${new Date(r.timestamp).toLocaleTimeString("id-ID")}</td><td>${r.ppm.toFixed(0)}</td><td>${r.flame === 0 ? "Low" : "High!!!!!"}</td><td>${r.water_pct.toFixed(0)}%</td><td>${r.pump ? "💧" : "—"}</td></tr>`,
                             )
                             .join("");
                     })
