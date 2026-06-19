@@ -296,12 +296,14 @@
                     .then((d) => {
                         errors = 0;
 
-                        if (!d.esp_connected) {
+                        if (d.esp_connected) {
+                            online(true);
+                        } else if (d.timestamp) {
                             online(false, "Tidak Terhubung");
+                        } else {
+                            online(false, "ESP32 belum kirim data");
                             return;
                         }
-
-                        online(true);
 
                         document.getElementById("last-time").innerText =
                             new Date(d.timestamp).toLocaleTimeString("id-ID");
