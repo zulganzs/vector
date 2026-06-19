@@ -145,6 +145,11 @@
         align-items: center;
         gap: 12px;
       }
+      .conn-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
       .btn-map {
         background: linear-gradient(135deg, #ff9800, #ff6b35);
         color: #fff;
@@ -302,10 +307,12 @@
             >Offline Mode</span
           >
         </div>
-        <a href="map.html" class="btn-map">Lokasi</a>
-        <button id="btn-install" class="btn-install" style="display: none">
-          Install App
-        </button>
+        <div class="conn-right">
+          <a href="map.html" class="btn-map">Lokasi</a>
+          <button id="btn-install" class="btn-install" style="display: none">
+            Install App
+          </button>
+        </div>
       </div>
 
       <!-- Sensor Cards -->
