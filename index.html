@@ -133,6 +133,26 @@
                 margin-bottom: 24px;
                 font-size: 0.8rem;
             }
+            .conn-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .btn-map {
+                background: linear-gradient(135deg, #ff9800, #ff6b35);
+                color: #fff;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 8px;
+                font-size: 0.78rem;
+                font-weight: 600;
+                cursor: pointer;
+                text-decoration: none;
+                transition: opacity 0.2s;
+            }
+            .btn-map:hover {
+                opacity: 0.85;
+            }
             .conn-dot {
                 width: 8px;
                 height: 8px;
@@ -204,11 +224,12 @@
         <div class="container">
             <!-- Connection -->
             <div class="conn-bar">
-                <div>
+                <div class="conn-left">
                     <span class="conn-dot" id="dot"></span>
                     <span id="conn-text">Menghubungkan…</span>
+                    <span id="last-time" style="color: #555">--:--:--</span>
                 </div>
-                <span id="last-time" style="color: #555">--:--:--</span>
+                <a href="map.html" class="btn-map">Lokasi</a>
             </div>
 
             <!-- Sensor Cards -->
