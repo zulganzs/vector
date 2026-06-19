@@ -333,16 +333,16 @@
                             fb = document.getElementById("b-flame");
                         if (d.flame === 0) {
                             document.getElementById("v-flame").innerText =
-                                "🔥 TERDETEKSI";
-                            fc.className = "card danger";
-                            fb.className = "badge badge-danger";
-                            fb.innerText = "KEBAKARAN";
-                        } else {
-                            document.getElementById("v-flame").innerText =
                                 "Aman";
                             fc.className = "card safe";
                             fb.className = "badge badge-safe";
                             fb.innerText = "Tidak Ada Api";
+                        } else {
+                            document.getElementById("v-flame").innerText =
+                                "🔥 TERDETEKSI";
+                            fc.className = "card danger";
+                            fb.className = "badge badge-danger";
+                            fb.innerText = "KEBAKARAN";
                         }
 
                         // Water
