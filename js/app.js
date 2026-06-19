@@ -100,6 +100,26 @@ function initPWA() {
         deferredPrompt = null;
         console.log('PWA was installed');
     });
+
+    document.addEventListener('visibilitychange', async () => {
+        if (document.visibilityState === 'visible' && !deferredPrompt) {
+            try {
+                if ('getInstalledRelatedApps' in navigator) {
+                    const apps = await navigator.getInstalledRelatedApps();
+                    if (apps.length === 0) {
+                        window.location.reload();
+                    }
+                }
+            } catch (e) {
+                if (!window.matchMedia('(display-mode: standalone)').matches) {
+                    const btnInstall = document.getElementById('btn-install');
+                    if (btnInstall && btnInstall.style.display === 'none') {
+                        window.location.reload();
+                    }
+                }
+            }
+        }
+    });
 }
 
 function updateOfflineUI(isOffline) {
