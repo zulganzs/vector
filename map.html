@@ -199,22 +199,21 @@
                 .grid {
                     grid-template-columns: repeat(2, 1fr);
                 }
-                .map-table {
-                    display: block;
-                    width: 100%;
-                    border-collapse: separate;
-                }
+                .map-table,
                 .map-table tr,
                 .map-table td {
                     display: block;
-                    width: 100%;
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    border-collapse: separate !important;
                 }
                 .map-cell {
                     height: 300px;
-                    width: 100%;
+                    width: 100% !important;
                 }
                 .info-cell {
-                    width: 100%;
+                    width: 100% !important;
+                    padding: 16px;
                 }
             }
 
