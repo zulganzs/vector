@@ -199,7 +199,13 @@
                 .grid {
                     grid-template-columns: repeat(2, 1fr);
                 }
-                .map-table, .map-table tr, .map-table td {
+                .map-table {
+                    display: block;
+                    width: 100%;
+                    border-collapse: separate;
+                }
+                .map-table tr,
+                .map-table td {
                     display: block;
                     width: 100%;
                 }
